@@ -6,8 +6,11 @@ const HeroSection = () => {
     <section className="w-full min-h-screen px-8 md:px-16 pt-16 flex items-center justify-center overflow-hidden relative">
       {/* Background Video Layer */}
       <video
-        className="absolute inset-0 w-full h-full object-cover -z-20"
-        style={{ filter: 'saturate(0)' }}
+        className="absolute left-0 right-0 w-full h-full object-cover -z-20"
+        style={{ 
+          filter: 'saturate(0)',
+          top: '-30%'
+        }}
         autoPlay
         muted
         loop
@@ -26,7 +29,7 @@ const HeroSection = () => {
           opacity: 0.7
         }}
       />
-      <div className="w-full max-w-[1280px] flex flex-col items-center gap-20 relative z-10">
+      <div className="w-full max-w-[1280px] flex flex-col items-center gap-20 relative z-10 pt-[120px]">
         <div className="w-full max-w-3xl flex flex-col items-center gap-8">
           {/* Feature badges */}
           <div className="flex flex-wrap items-center justify-center gap-3">
