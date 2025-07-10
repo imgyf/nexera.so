@@ -17,8 +17,8 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 4%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -37,6 +37,19 @@ All colors MUST be HSL.
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+
+    /* Hero section design tokens */
+    --hero-background: 0 0% 4%;
+    --hero-foreground: 0 0% 100%;
+    --hero-muted: 0 0% 67%;
+    --hero-badge-bg: 0 0% 0% / 0.1;
+    --hero-badge-border: 0 0% 100% / 0.1;
+    --hero-badge-text: 0 0% 67%;
+    --hero-secondary-bg: 0 0% 100% / 0.1;
+    --hero-secondary-border: 0 0% 100% / 0.2;
+
+    /* Backdrop blur utilities */
+    --backdrop-blur: blur(6px);
 
     --sidebar-background: 0 0% 98%;
 

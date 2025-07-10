@@ -61,6 +61,16 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				hero: {
+					DEFAULT: 'hsl(var(--hero-background))',
+					foreground: 'hsl(var(--hero-foreground))',
+					muted: 'hsl(var(--hero-muted))',
+					'badge-bg': 'hsl(var(--hero-badge-bg))',
+					'badge-border': 'hsl(var(--hero-badge-border))',
+					'badge-text': 'hsl(var(--hero-badge-text))',
+					'secondary-bg': 'hsl(var(--hero-secondary-bg))',
+					'secondary-border': 'hsl(var(--hero-secondary-border))'
 				}
 			},
 			borderRadius: {
