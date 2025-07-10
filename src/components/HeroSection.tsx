@@ -5,7 +5,8 @@ const HeroSection = () => {
       {/* Background Video Layer */}
       <video className="absolute left-0 right-0 w-full h-full object-cover -z-20" style={{
       filter: 'saturate(0)',
-      top: '-30%'
+      top: '-30%',
+      objectPosition: 'center top'
     }} autoPlay muted loop playsInline controls={false}>
         <source src="https://res.cloudinary.com/da7s1izqw/video/upload/v1752106173/Cw9D8nOGuMDx0eVn02OhggPWXg_kesp06.mp4" type="video/mp4" />
       </video>
