@@ -3,7 +3,7 @@ import { Lightbulb, Zap, Sparkles } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="w-full min-h-screen bg-hero px-8 md:px-16 pt-16 flex items-center justify-center overflow-hidden relative">
+    <section className="w-full min-h-screen px-8 md:px-16 pt-16 flex items-center justify-center overflow-hidden relative">
       {/* Background Video Layer */}
       <video
         className="absolute inset-0 w-full h-full object-cover -z-20"
