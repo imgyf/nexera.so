@@ -7,6 +7,7 @@ const HeroSection = () => {
       {/* Background Video Layer */}
       <video
         className="absolute inset-0 w-full h-full object-cover -z-20"
+        style={{ filter: 'saturate(0)' }}
         autoPlay
         muted
         loop
@@ -21,7 +22,8 @@ const HeroSection = () => {
         className="absolute inset-0 w-full h-full z-0"
         style={{
           backgroundColor: '#D9D9D9',
-          mixBlendMode: 'hue'
+          mixBlendMode: 'multiply',
+          opacity: 0.7
         }}
       />
       <div className="w-full max-w-[1280px] flex flex-col items-center gap-20 relative z-10">
