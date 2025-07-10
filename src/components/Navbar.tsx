@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -23,7 +23,6 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <Sparkles className="w-8 h-8 text-hero-foreground" />
             <span className="text-xl font-semibold text-hero-foreground">
               InnovateAI
             </span>
@@ -49,7 +48,7 @@ const Navbar = () => {
             <Button variant="ghost" className="text-hero-muted hover:text-hero-foreground">
               Sign In
             </Button>
-            <Button variant="hero" size="sm">
+            <Button variant="hero" size="sm" className="rounded-[10px]">
               Get Started
             </Button>
           </div>
@@ -91,7 +90,7 @@ const Navbar = () => {
                 >
                   Sign In
                 </Button>
-                <Button variant="hero" className="w-full">
+                <Button variant="hero" className="w-full rounded-[10px]">
                   Get Started
                 </Button>
               </div>
