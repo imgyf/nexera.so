@@ -16,18 +16,18 @@ const FeatureSection2 = () => {
                     <Settings className="w-6 h-6 text-hero-foreground" />
                   </div>
                   <span className="text-hero-badge-text text-sm font-normal leading-relaxed">
-                    Integrated with
+                    Powered by AI
                   </span>
                 </div>
 
                 {/* Main Heading */}
                 <h2 className="text-hero-foreground text-4xl lg:text-5xl xl:text-6xl font-normal leading-tight">
-                  Empowering change through technology
+                  Accelerating workflows through automation
                 </h2>
 
                 {/* Description */}
                 <p className="text-hero-muted text-base lg:text-lg font-normal leading-relaxed max-w-md">
-                  Many Web3 platforms are complex and have a steep learning curve, encouraging new users.
+                  Smart automation reduces manual tasks by 40%, streamlining operations for faster results.
                 </p>
               </div>
 
@@ -59,7 +59,7 @@ const FeatureSection2 = () => {
                     <Bot className="w-6 h-6 text-hero-foreground" />
                   </div>
                   <span className="text-hero-muted text-base lg:text-lg font-normal leading-relaxed">
-                    Internal Task Bots
+                    Smart AI Assistants
                   </span>
                 </div>
 
@@ -68,7 +68,7 @@ const FeatureSection2 = () => {
                     <Settings className="w-6 h-6 text-hero-foreground" />
                   </div>
                   <span className="text-hero-muted text-base lg:text-lg font-normal leading-relaxed">
-                    100+ Automations
+                    40% Faster Execution
                   </span>
                 </div>
               </div>
