@@ -70,7 +70,7 @@ const CaseStudiesSection = () => {
                 <img 
                   src="/lovable-uploads/9b72fac8-5af1-41de-9a1e-b196856ba36f.png" 
                   alt="Business dashboard"
-                  className="w-full h-full object-cover transform rotate-[10deg] scale-110"
+                  className="w-full h-full object-cover"
                 />
                 
                 {/* Overlay Card */}
