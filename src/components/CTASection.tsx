@@ -4,7 +4,7 @@ const CTASection = () => {
   return (
     <section className="w-full py-16 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="relative w-full overflow-hidden rounded-3xl border border-white/10 min-h-[500px] flex items-center justify-center" style={{backgroundImage: 'url(/lovable-uploads/f205f4a0-427d-4991-8617-497b883351fe.png)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+        <div className="relative w-full overflow-hidden rounded-3xl min-h-[500px] flex items-center justify-center" style={{backgroundImage: 'url(/lovable-uploads/f205f4a0-427d-4991-8617-497b883351fe.png)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
           <div className="flex flex-col items-center justify-center gap-12 px-8 py-16 max-w-2xl mx-auto text-center">
             <div className="space-y-5">
               <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-white leading-tight">
