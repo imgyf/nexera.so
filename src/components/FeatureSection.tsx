@@ -56,7 +56,7 @@ const FeatureSection = () => {
 
           {/* Right Image Container */}
           <div className="flex-1 max-w-2xl">
-            <div className="relative w-full h-[577px] overflow-hidden rounded-[30px]">
+            <div className="relative w-full aspect-square lg:h-[577px] lg:aspect-auto overflow-hidden rounded-[30px]">
               {/* Background Image */}
               <img 
                 src="/lovable-uploads/f85acb58-198d-4595-ba4f-4de5cbdaeeb5.png" 
@@ -65,7 +65,7 @@ const FeatureSection = () => {
               />
               
               {/* Overlay Card */}
-              <div className="absolute left-16 top-14 w-[496px] h-[465px] bg-hero-secondary-bg/80 backdrop-blur-sm rounded-[21px] border border-hero-secondary-border shadow-lg"></div>
+              <div className="absolute left-4 top-4 lg:left-16 lg:top-14 w-[80%] h-[80%] lg:w-[496px] lg:h-[465px] bg-hero-secondary-bg/80 backdrop-blur-sm rounded-[21px] border border-hero-secondary-border shadow-lg"></div>
             </div>
           </div>
         </div>
