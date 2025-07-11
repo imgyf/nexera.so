@@ -59,9 +59,9 @@ const FeatureSection = () => {
             <div className="relative w-full h-[577px] overflow-hidden rounded-[30px]">
               {/* Background Image */}
               <img 
-                src="https://placehold.co/1440x810" 
+                src="/lovable-uploads/f85acb58-198d-4595-ba4f-4de5cbdaeeb5.png" 
                 alt="Dashboard preview"
-                className="absolute w-[1440px] h-[810px] -left-[478px] top-[127px] -rotate-[14deg] origin-top-left"
+                className="w-full h-full object-cover"
               />
               
               {/* Overlay Card */}
