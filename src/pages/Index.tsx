@@ -1,6 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
 import { LogoMarquee } from "@/components/LogoMarquee";
+import FeatureSection from "@/components/FeatureSection";
 
 const Index = () => {
   return (
@@ -8,6 +9,7 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <LogoMarquee />
+      <FeatureSection />
     </>
   );
 };
