@@ -6,7 +6,6 @@ import FeatureSection2 from "@/components/FeatureSection2";
 import FeatureSection3 from "@/components/FeatureSection3";
 import JourneySection from "@/components/JourneySection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
-import ValuesSection from "@/components/ValuesSection";
 
 const Index = () => {
   return (
@@ -19,7 +18,6 @@ const Index = () => {
       <FeatureSection3 />
       <JourneySection />
       <CaseStudiesSection />
-      <ValuesSection />
     </>
   );
 };
