@@ -2,7 +2,7 @@ import { Settings, Bot } from "lucide-react";
 
 const FeatureSection2 = () => {
   return (
-    <section className="w-full py-8 px-4 bg-[#050505]">
+    <section className="w-full py-12 lg:py-8 px-4 bg-[#050505]">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row-reverse items-center gap-20">
           {/* Left Content - Now on right for desktop */}
