@@ -6,6 +6,7 @@ import FeatureSection2 from "@/components/FeatureSection2";
 import FeatureSection3 from "@/components/FeatureSection3";
 import JourneySection from "@/components/JourneySection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
+import CTASection from "@/components/CTASection";
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
       <FeatureSection3 />
       <JourneySection />
       <CaseStudiesSection />
+      <CTASection />
     </>
   );
 };
