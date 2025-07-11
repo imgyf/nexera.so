@@ -18,7 +18,7 @@ const JourneySection = () => {
   ];
 
   return (
-    <section className="w-full py-12 lg:py-16 px-4 bg-[#050505]">
+    <section className="w-full mt-[150px] pb-12 lg:pb-16 px-4 bg-[#050505]">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col gap-16">
           {/* Header Section */}
