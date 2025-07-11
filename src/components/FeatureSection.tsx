@@ -1,0 +1,77 @@
+import { Settings, Bot } from "lucide-react";
+
+const FeatureSection = () => {
+  return (
+    <section className="w-full py-20 px-4 bg-[#050505]">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col lg:flex-row items-center gap-20">
+          {/* Left Content */}
+          <div className="flex-1 max-w-2xl">
+            <div className="space-y-20">
+              {/* Header Section */}
+              <div className="space-y-5">
+                {/* Badge */}
+                <div className="inline-flex items-center gap-3 p-4 bg-hero-badge-bg border border-hero-badge-border rounded-2xl backdrop-blur-md">
+                  <div className="w-6 h-6 relative">
+                    <Settings className="w-6 h-6 text-hero-foreground" />
+                  </div>
+                  <span className="text-hero-badge-text text-sm font-normal leading-relaxed">
+                    Integrated with
+                  </span>
+                </div>
+
+                {/* Main Heading */}
+                <h2 className="text-hero-foreground text-4xl lg:text-5xl xl:text-6xl font-normal leading-tight">
+                  Empowering change through technology
+                </h2>
+
+                {/* Description */}
+                <p className="text-hero-muted text-base lg:text-lg font-normal leading-relaxed max-w-md">
+                  Many Web3 platforms are complex and have a steep learning curve, encouraging new users.
+                </p>
+              </div>
+
+              {/* Features List */}
+              <div className="space-y-6 max-w-md">
+                <div className="flex items-center gap-6">
+                  <div className="w-6 h-6 flex-shrink-0">
+                    <Bot className="w-6 h-6 text-hero-foreground" />
+                  </div>
+                  <span className="text-hero-muted text-base lg:text-lg font-normal leading-relaxed">
+                    Internal Task Bots
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-6">
+                  <div className="w-6 h-6 flex-shrink-0">
+                    <Settings className="w-6 h-6 text-hero-foreground" />
+                  </div>
+                  <span className="text-hero-muted text-base lg:text-lg font-normal leading-relaxed">
+                    100+ Automations
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Image Container */}
+          <div className="flex-1 max-w-2xl">
+            <div className="relative w-full h-[577px] overflow-hidden rounded-[30px]">
+              {/* Background Image */}
+              <img 
+                src="https://placehold.co/1440x810" 
+                alt="Dashboard preview"
+                className="absolute w-[1440px] h-[810px] -left-[478px] top-[127px] -rotate-[14deg] origin-top-left"
+              />
+              
+              {/* Overlay Card */}
+              <div className="absolute left-16 top-14 w-[496px] h-[465px] bg-hero-secondary-bg/80 backdrop-blur-sm rounded-[21px] border border-hero-secondary-border shadow-lg"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default FeatureSection;
