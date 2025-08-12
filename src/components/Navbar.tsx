@@ -23,9 +23,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <span className="text-xl font-semibold text-hero-foreground">
-              InnovateAI
-            </span>
+            <img 
+              src="/lovable-uploads/25b3039d-5f98-460a-9606-1510946f155d.png" 
+              alt="Logo" 
+              className="h-8 w-auto brightness-0 invert"
+            />
           </div>
 
           {/* Desktop Navigation */}
