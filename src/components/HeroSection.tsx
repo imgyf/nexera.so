@@ -29,7 +29,7 @@ const HeroSection = () => {
 
   return <section className="w-full min-h-screen px-8 md:px-16 pt-16 flex items-center justify-center overflow-hidden relative">
       {/* Background Video Layer */}
-      <div className="absolute inset-0 z-[1]" style={{ top: '-30%' }}>
+      <div className="absolute inset-0 z-[1]" style={{ top: '-40%' }}>
         <video 
           ref={videoRef}
           className="w-full h-full object-cover" 
