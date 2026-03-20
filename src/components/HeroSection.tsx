@@ -57,6 +57,8 @@ const HeroSection = () => {
           muted 
           loop 
           playsInline
+          crossOrigin="anonymous"
+          preload="auto"
         />
       </div>
       

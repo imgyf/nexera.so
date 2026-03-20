@@ -63,6 +63,8 @@ const AboutUs = () => {
             muted 
             loop 
             playsInline
+            crossOrigin="anonymous"
+            preload="auto"
           />
         </div>
         
