@@ -15,11 +15,27 @@ const HeroSection = () => {
     // Check if browser natively supports HLS (Safari)
     if (video.canPlayType('application/vnd.apple.mpegurl')) {
       video.src = videoSrc;
+      video.play().catch(e => console.error("Hero video play error:", e));
     } else if (Hls.isSupported()) {
-      // Use hls.js for other browsers
-      const hls = new Hls();
+      const hls = new Hls({
+        enableWorker: true,
+        lowLatencyMode: false,
+      });
       hls.loadSource(videoSrc);
       hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED, () => {
+        video.play().catch(e => console.error("Hero video play error:", e));
+      });
+      hls.on(Hls.Events.ERROR, (_event, data) => {
+        console.error("HLS error:", data.type, data.details);
+        if (data.fatal) {
+          if (data.type === Hls.ErrorTypes.NETWORK_ERROR) {
+            hls.startLoad();
+          } else {
+            hls.destroy();
+          }
+        }
+      });
       
       return () => {
         hls.destroy();
