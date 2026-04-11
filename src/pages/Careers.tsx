@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -90,6 +90,13 @@ const EDITING_SOFTWARE = [
 
 const Careers = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    document.title = "Careers — Nexera App Studio";
+    return () => {
+      document.title = "Nexera App Studio — Building Tomorrow's Top Apps, Today";
+    };
+  }, []);
 
   return (
     <>
