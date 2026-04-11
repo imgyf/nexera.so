@@ -1,4 +1,4 @@
-import { Settings, Bot } from "lucide-react";
+import { BarChart3, Layers, Gauge } from "lucide-react";
 
 const FeatureSection3 = () => {
   return (
@@ -13,21 +13,21 @@ const FeatureSection3 = () => {
                 {/* Badge */}
                 <div className="inline-flex items-center gap-3 p-4 bg-hero-badge-bg border border-hero-badge-border rounded-2xl backdrop-blur-md">
                   <div className="w-6 h-6 relative">
-                    <Settings className="w-6 h-6 text-hero-foreground" />
+                    <BarChart3 className="w-6 h-6 text-hero-foreground" />
                   </div>
                   <span className="text-hero-badge-text text-sm font-normal leading-relaxed">
-                    Ultra HD Quality
+                    Performance Iteration
                   </span>
                 </div>
 
                 {/* Main Heading */}
                 <h2 className="text-hero-foreground text-4xl lg:text-5xl xl:text-6xl font-normal leading-tight">
-                  Creating content at stunning quality
+                  Launch, measure, and refine rapidly
                 </h2>
 
                 {/* Description */}
                 <p className="text-hero-muted text-base lg:text-lg font-normal leading-relaxed max-w-md">
-                  Professional 4K recording delivers crystal-clear videos for exceptional user experience.
+                  We ship fast and iterate based on real user data. Every cycle sharpens the product toward higher LTV and lower churn.
                 </p>
               </div>
 
@@ -56,19 +56,19 @@ const FeatureSection3 = () => {
               <div className="space-y-6 max-w-md order-3">
                 <div className="flex items-center gap-6">
                   <div className="w-6 h-6 flex-shrink-0">
-                    <Bot className="w-6 h-6 text-hero-foreground" />
+                    <Gauge className="w-6 h-6 text-hero-foreground" />
                   </div>
                   <span className="text-hero-muted text-base lg:text-lg font-normal leading-relaxed">
-                    4K Video Recording
+                    Data-Driven Optimization
                   </span>
                 </div>
 
                 <div className="flex items-center gap-6">
                   <div className="w-6 h-6 flex-shrink-0">
-                    <Settings className="w-6 h-6 text-hero-foreground" />
+                    <Layers className="w-6 h-6 text-hero-foreground" />
                   </div>
                   <span className="text-hero-muted text-base lg:text-lg font-normal leading-relaxed">
-                    Ultra HD Streaming
+                    Scalable Infrastructure
                   </span>
                 </div>
               </div>

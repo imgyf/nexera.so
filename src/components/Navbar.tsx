@@ -3,6 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
+const NexeraLogo = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114.026 20.965" className={className}>
+    <path d="M 10.471 0.284 C 16.288 0.284 20.984 4.912 20.984 10.645 L 20.984 18.63 C 20.984 19.9 19.903 20.965 18.573 20.965 C 17.286 20.965 16.205 19.9 16.205 18.63 L 16.205 10.645 C 16.205 7.532 13.629 4.994 10.471 4.994 C 7.313 4.994 4.737 7.532 4.737 10.645 L 4.737 18.63 C 4.736 19.251 4.486 19.846 4.041 20.283 C 3.597 20.721 2.995 20.966 2.368 20.965 C 1.08 20.965 0 19.9 0 18.63 L 0 10.645 C 0 4.912 4.695 0.284 10.471 0.284 Z M 42.417 8.723 C 42.583 9.746 42.25 10.729 41.585 11.507 C 40.921 12.244 39.965 12.695 38.968 12.695 L 26.835 12.695 C 27.749 14.62 29.743 16.012 32.029 16.012 C 33.418 16.015 34.761 15.52 35.81 14.62 C 36.267 14.21 36.849 14.046 37.389 14.046 C 38.053 14.046 38.719 14.292 39.176 14.824 C 40.048 15.807 39.924 17.281 38.926 18.142 C 37.098 19.698 34.688 20.68 32.029 20.68 C 26.253 20.68 21.558 16.053 21.558 10.361 C 21.558 4.627 26.253 0 32.029 0 C 37.264 0 41.585 3.768 42.417 8.723 Z M 26.835 7.986 L 37.264 7.986 C 36.307 5.982 34.267 4.705 32.029 4.709 C 29.743 4.709 27.749 6.061 26.835 7.986 Z" fill="currentColor"/>
+    <path d="M 54.099 10.361 L 59.75 16.79 C 60.622 17.773 60.498 19.247 59.501 20.107 C 59.044 20.476 58.503 20.68 57.963 20.68 C 57.299 20.68 56.633 20.394 56.135 19.861 L 50.941 13.923 L 45.789 19.861 C 45.29 20.394 44.625 20.68 43.961 20.68 C 43.42 20.68 42.88 20.476 42.423 20.107 C 41.426 19.247 41.301 17.773 42.174 16.79 L 47.825 10.361 L 42.174 3.89 C 41.301 2.908 41.426 1.433 42.423 0.573 C 42.88 0.205 43.42 0 44.002 0 C 44.667 0 45.332 0.287 45.789 0.819 L 50.941 6.757 L 56.135 0.819 C 56.581 0.301 57.234 0.001 57.922 0 C 58.503 0 59.044 0.205 59.501 0.573 C 60.498 1.433 60.622 2.908 59.75 3.891 Z" fill="currentColor"/>
+    <path d="M 81.173 8.723 C 81.339 9.746 81.007 10.729 80.342 11.507 C 79.677 12.244 78.721 12.695 77.724 12.695 L 65.591 12.695 C 66.505 14.62 68.499 16.012 70.785 16.012 C 72.239 16.012 73.569 15.48 74.566 14.62 C 75.023 14.21 75.605 14.046 76.145 14.046 C 76.81 14.046 77.475 14.292 77.932 14.824 C 78.804 15.807 78.68 17.281 77.682 18.142 C 75.854 19.698 73.444 20.68 70.785 20.68 C 65.009 20.68 60.314 16.053 60.314 10.361 C 60.314 4.627 65.009 0 70.785 0 C 76.02 0 80.342 3.768 81.173 8.723 Z M 65.591 7.986 L 76.02 7.986 C 75.063 5.982 73.023 4.705 70.785 4.709 C 68.499 4.709 66.505 6.061 65.591 7.986 Z M 91.777 0.284 C 93.064 0.284 94.145 1.308 94.145 2.618 C 94.145 3.929 93.064 4.953 91.777 4.953 L 88.702 4.953 C 88.161 4.953 87.621 5.198 87.206 5.567 C 86.832 5.935 86.583 6.468 86.583 7.041 L 86.583 18.426 C 86.582 19.046 86.331 19.641 85.887 20.079 C 85.443 20.517 84.841 20.762 84.214 20.76 C 82.926 20.76 81.846 19.695 81.846 18.426 L 81.846 7.042 C 81.846 3.274 84.879 0.284 88.702 0.284 L 91.777 0.284 Z M 103.513 0.284 C 109.33 0.284 114.026 4.912 114.026 10.645 L 114.026 18.63 C 114.026 19.9 112.945 20.965 111.616 20.965 C 110.535 20.965 109.621 20.228 109.33 19.245 C 107.668 20.309 105.674 20.965 103.513 20.965 C 97.737 20.965 93.042 16.337 93.042 10.645 C 93.042 4.912 97.737 0.284 103.513 0.284 Z M 103.513 16.296 C 106.671 16.296 109.247 13.757 109.247 10.645 C 109.247 7.532 106.671 4.994 103.513 4.994 C 100.355 4.994 97.779 7.532 97.779 10.645 C 97.779 13.757 100.355 16.296 103.513 16.296 Z" fill="currentColor"/>
+  </svg>
+);
+
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -11,10 +19,10 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { name: "Features", href: "#features" },
-    { name: "Solutions", href: "#solutions" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "About", href: "/about" },
+    { name: "About", href: "#about" },
+    { name: "Our Core", href: "#our-core" },
+    { name: "Portfolio", href: "#portfolio" },
+    { name: "Careers", href: "/careers" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -25,11 +33,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <Link to="/">
-              <img 
-                src="/lovable-uploads/25b3039d-5f98-460a-9606-1510946f155d.png" 
-                alt="Logo" 
-                className="h-8 w-auto brightness-0 invert"
-              />
+              <NexeraLogo className="h-5 w-auto text-hero-foreground" />
             </Link>
           </div>
 
@@ -60,12 +64,11 @@ const Navbar = () => {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" className="text-hero-muted hover:text-hero-foreground">
-              Sign In
-            </Button>
-            <Button variant="hero" size="sm" className="rounded-[10px]">
-              Get Started
-            </Button>
+            <Link to="/careers">
+              <Button variant="hero" size="sm" className="rounded-[10px]">
+                Join Us
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -110,15 +113,11 @@ const Navbar = () => {
                 )
               ))}
               <div className="flex flex-col space-y-2 px-3 pt-4">
-                <Button 
-                  variant="ghost" 
-                  className="text-hero-muted hover:text-hero-foreground justify-start"
-                >
-                  Sign In
-                </Button>
-                <Button variant="hero" className="w-full rounded-[10px]">
-                  Get Started
-                </Button>
+                <Link to="/careers" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Button variant="hero" className="w-full rounded-[10px]">
+                    Join Us
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

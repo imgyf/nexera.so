@@ -3,26 +3,26 @@ import { Star, Quote } from "lucide-react";
 const TestimonialSection = () => {
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "CEO, TechFlow Inc.",
-      company: "TechFlow Inc.",
-      content: "This platform has revolutionized how we approach innovation. The AI-powered insights have helped us make decisions faster and more accurately than ever before.",
+      name: "Alex Rivera",
+      role: "Head of Growth, Wellness App",
+      company: "Wellness App",
+      content: "Nexera took our concept from napkin sketch to 50K downloads in under a month. Their trend sensing is unreal — they knew what users wanted before we did.",
       rating: 5,
       image: "/lovable-uploads/f205f4a0-427d-4991-8617-497b883351fe.png"
     },
     {
-      name: "Michael Chen",
-      role: "CTO, DataVise",
-      company: "DataVise",
-      content: "The automation capabilities saved us countless hours. Our team can now focus on strategic initiatives rather than repetitive tasks.",
+      name: "Priya Sharma",
+      role: "Founder, Productivity Startup",
+      company: "Productivity Startup",
+      content: "The speed of iteration is what sets Nexera apart. We shipped three major product updates in the time it would normally take to ship one.",
       rating: 5,
       image: "/lovable-uploads/829efb0e-d3ef-44df-b375-e2f710dfb0bc.png"
     },
     {
-      name: "Emily Rodriguez",
-      role: "Product Manager, InnovateLab",
-      company: "InnovateLab",
-      content: "Implementation was seamless and the results were immediate. Our productivity increased by 40% in the first month alone.",
+      name: "James Park",
+      role: "Investor, Consumer Apps Fund",
+      company: "Consumer Apps Fund",
+      content: "Nexera's portfolio approach to consumer apps is smart. They combine creative intuition with data-backed iteration in a way that consistently produces winners.",
       rating: 5,
       image: "/lovable-uploads/f4b94bd5-9414-4b09-b564-c52434a0c77b.png"
     }
@@ -41,11 +41,11 @@ const TestimonialSection = () => {
           </div>
           
           <h2 className="text-hero-foreground text-4xl lg:text-5xl xl:text-6xl font-normal leading-tight mb-6">
-            Trusted by industry leaders
+            What people are saying
           </h2>
-          
+
           <p className="text-hero-muted text-base lg:text-lg font-normal leading-relaxed max-w-2xl mx-auto">
-            See how companies worldwide are transforming their operations with our AI-powered platform.
+            Founders, investors, and partners on working with Nexera to build and scale consumer apps.
           </p>
         </div>
 

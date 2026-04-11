@@ -1,4 +1,4 @@
-import { Settings, Bot } from "lucide-react";
+import { FileText, Share2, Repeat } from "lucide-react";
 
 const FeatureSection2 = () => {
   return (
@@ -13,21 +13,21 @@ const FeatureSection2 = () => {
                 {/* Badge */}
                 <div className="inline-flex items-center gap-3 p-4 bg-hero-badge-bg border border-hero-badge-border rounded-2xl backdrop-blur-md">
                   <div className="w-6 h-6 relative">
-                    <Settings className="w-6 h-6 text-hero-foreground" />
+                    <FileText className="w-6 h-6 text-hero-foreground" />
                   </div>
                   <span className="text-hero-badge-text text-sm font-normal leading-relaxed">
-                    Powered by AI
+                    Content Driven
                   </span>
                 </div>
 
                 {/* Main Heading */}
                 <h2 className="text-hero-foreground text-4xl lg:text-5xl xl:text-6xl font-normal leading-tight">
-                  Accelerating workflows through automation
+                  Apps fueled by meaningful content
                 </h2>
 
                 {/* Description */}
                 <p className="text-hero-muted text-base lg:text-lg font-normal leading-relaxed max-w-md">
-                  Smart automation reduces manual tasks by 40%, streamlining operations for faster results.
+                  We build apps around content that keeps users coming back. Every feature is designed to drive retention and long-term engagement.
                 </p>
               </div>
 
@@ -56,19 +56,19 @@ const FeatureSection2 = () => {
               <div className="space-y-6 max-w-md order-3">
                 <div className="flex items-center gap-6">
                   <div className="w-6 h-6 flex-shrink-0">
-                    <Bot className="w-6 h-6 text-hero-foreground" />
+                    <Share2 className="w-6 h-6 text-hero-foreground" />
                   </div>
                   <span className="text-hero-muted text-base lg:text-lg font-normal leading-relaxed">
-                    Smart AI Assistants
+                    Engineered Growth Loops
                   </span>
                 </div>
 
                 <div className="flex items-center gap-6">
                   <div className="w-6 h-6 flex-shrink-0">
-                    <Settings className="w-6 h-6 text-hero-foreground" />
+                    <Repeat className="w-6 h-6 text-hero-foreground" />
                   </div>
                   <span className="text-hero-muted text-base lg:text-lg font-normal leading-relaxed">
-                    40% Faster Execution
+                    Built-in Referral Mechanics
                   </span>
                 </div>
               </div>

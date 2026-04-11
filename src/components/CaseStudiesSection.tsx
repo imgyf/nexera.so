@@ -6,33 +6,33 @@ const CaseStudiesSection = () => {
 
   const slides = [
     {
-      quote: "AI-driven forecasting cut inventory waste by 40% for TrailForge",
-      description: "ScaleByte's sales team struggled with follow-up delays. Our AI sales assistant automated outreach, lead scoring, and CRM updates—resulting in faster responses and more closed deals.",
+      quote: "From zero to 100K users in 6 weeks with trend-first development",
+      description: "We identified a rising wellness trend, built an MVP in under two weeks, and engineered viral sharing mechanics that drove organic growth — reaching six figures in active users before spending a dollar on ads.",
       stats: [
-        { icon: Target, text: "3x More Deals" },
-        { icon: Zap, text: "40% Faster Responses" },
-        { icon: TrendingUp, text: "95% Lead Accuracy" },
-        { icon: Database, text: "CRM Fully Synced" }
+        { icon: Target, text: "100K Users in 6 Weeks" },
+        { icon: Zap, text: "2-Week MVP Build" },
+        { icon: TrendingUp, text: "Organic Viral Growth" },
+        { icon: Database, text: "Full Analytics Stack" }
       ]
     },
     {
-      quote: "Customer support efficiency increased by 60% with automated AI responses",
-      description: "TechFlow's support team was overwhelmed with tickets. Our AI chatbot handled 80% of routine inquiries, allowing agents to focus on complex issues and improve customer satisfaction.",
+      quote: "Retention doubled through content-driven engagement loops",
+      description: "A productivity app was losing users after Day 7. We redesigned the core loop around personalized content delivery and smart notifications — doubling 30-day retention and tripling LTV.",
       stats: [
-        { icon: Users, text: "80% Auto-Resolved" },
-        { icon: Clock, text: "60% Faster Support" },
-        { icon: Shield, text: "99% Uptime" },
-        { icon: CheckCircle, text: "95% Satisfaction" }
+        { icon: Users, text: "2x D30 Retention" },
+        { icon: Clock, text: "3x Lifetime Value" },
+        { icon: Shield, text: "Personalized Content" },
+        { icon: CheckCircle, text: "Smart Notifications" }
       ]
     },
     {
-      quote: "Marketing ROI improved by 250% through intelligent campaign optimization",
-      description: "GrowthCorp struggled with ad spend efficiency. Our AI marketing assistant optimized campaigns in real-time, targeting the right audiences and maximizing conversion rates.",
+      quote: "Scaled from one app to a portfolio generating 7-figure annual revenue",
+      description: "By applying our trend sensing and rapid iteration playbook across multiple verticals, we grew a single successful app into a diversified portfolio of high-LTV consumer products.",
       stats: [
-        { icon: TrendingUp, text: "250% ROI Boost" },
-        { icon: Target, text: "85% Better Targeting" },
-        { icon: Zap, text: "Real-time Optimization" },
-        { icon: Database, text: "Full Attribution" }
+        { icon: TrendingUp, text: "7-Figure Revenue" },
+        { icon: Target, text: "Multi-Vertical Portfolio" },
+        { icon: Zap, text: "Repeatable Playbook" },
+        { icon: Database, text: "Cross-App Insights" }
       ]
     }
   ];
@@ -54,10 +54,10 @@ const CaseStudiesSection = () => {
           {/* Header Section */}
           <div className="flex flex-col items-center gap-6 text-center">
             <span className="text-hero-foreground text-base font-normal leading-relaxed">
-              Case Studies
+              Our Results
             </span>
             <h2 className="text-hero-foreground text-4xl lg:text-5xl xl:text-6xl font-normal leading-tight max-w-4xl">
-              See How Smart AI Automation Transforms Businesses
+              How We Build Impactful Apps
             </h2>
           </div>
 

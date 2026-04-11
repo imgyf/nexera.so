@@ -8,14 +8,14 @@ const CTASection = () => {
           <div className="flex flex-col items-center justify-center gap-12 px-8 py-16 max-w-2xl mx-auto text-center">
             <div className="space-y-5">
               <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-white leading-tight">
-                Take the next step to success
+                Let's build something people love
               </h2>
               <p className="text-hero-muted text-base leading-relaxed max-w-lg mx-auto">
-                Many Web3 platforms are complex and have a steep learning curve, discouraging new users from entering the space.
+                Whether you have an app idea or want to partner with us on the next viral product — we'd love to hear from you.
               </p>
             </div>
             <Button variant="default" className="h-12 px-4 text-base">
-              Get Started for Free
+              Get in Touch
             </Button>
           </div>
         </div>

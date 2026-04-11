@@ -1,18 +1,18 @@
 const JourneySection = () => {
   const cards = [
     {
-      title: "Finance Focused",
-      description: "Our team bridges the gap between finance and tech, driving our commitment to results.",
+      title: "Wellness",
+      description: "High-engagement apps that help users build healthy habits, track progress, and stay motivated.",
       image: "/lovable-uploads/829efb0e-d3ef-44df-b375-e2f710dfb0bc.png"
     },
     {
-      title: "AI Innovation", 
-      description: "We built our leadership team to expertly combine deep finance knowledge with advanced AI.",
+      title: "Productivity",
+      description: "Smart tools that simplify daily workflows and turn complex tasks into effortless routines.",
       image: "/lovable-uploads/f4b94bd5-9414-4b09-b564-c52434a0c77b.png"
     },
     {
-      title: "Client Empowerment",
-      description: "Dedicated to helping firms achieve deal flow goals through efficient technology solutions.",
+      title: "Entertainment",
+      description: "Content-rich experiences that capture attention and keep users coming back for more.",
       image: "/lovable-uploads/8c0a0f76-8c4f-4512-8dd6-f59bd453c8fc.png"
     }
   ];
@@ -26,16 +26,16 @@ const JourneySection = () => {
             <div className="flex-1 max-w-2xl">
               <div className="flex flex-col gap-4">
                 <span className="text-hero-foreground text-base font-normal leading-relaxed">
-                  Our Journey
+                  Our Verticals
                 </span>
                 <h2 className="text-hero-foreground text-4xl lg:text-5xl xl:text-6xl font-normal leading-tight">
-                  Tailored AI systems, built for finance
+                  Apps designed for real people
                 </h2>
               </div>
             </div>
             <div className="flex-1 max-w-lg">
               <p className="text-hero-muted text-base font-normal leading-relaxed">
-                Delivering the Latest AI Advancements to Solve Your Specific Goals and Challenges, Ensuring Enhanced Efficiency and Insight Growth.
+                We design, build, and grow consumer apps across wellness, productivity, and entertainment — creating high-value mobile experiences through trend insight and smart distribution.
               </p>
             </div>
           </div>

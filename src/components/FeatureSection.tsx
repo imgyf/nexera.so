@@ -1,4 +1,4 @@
-import { Settings, Bot } from "lucide-react";
+import { Eye, Rocket, TrendingUp } from "lucide-react";
 
 const FeatureSection = () => {
   return (
@@ -13,21 +13,21 @@ const FeatureSection = () => {
                 {/* Badge */}
                 <div className="inline-flex items-center gap-3 p-4 bg-hero-badge-bg border border-hero-badge-border rounded-2xl backdrop-blur-md">
                   <div className="w-6 h-6 relative">
-                    <Settings className="w-6 h-6 text-hero-foreground" />
+                    <Eye className="w-6 h-6 text-hero-foreground" />
                   </div>
                   <span className="text-hero-badge-text text-sm font-normal leading-relaxed">
-                    Integrated with
+                    Trend Sensing
                   </span>
                 </div>
 
                 {/* Main Heading */}
                 <h2 className="text-hero-foreground text-4xl lg:text-5xl xl:text-6xl font-normal leading-tight">
-                  Empowering change through technology
+                  Spotting what's next before it peaks
                 </h2>
 
                 {/* Description */}
                 <p className="text-hero-muted text-base lg:text-lg font-normal leading-relaxed max-w-md">
-                  Many Web3 platforms are complex and have a steep learning curve, encouraging new users.
+                  We monitor emerging cultural, tech, and content trends to identify high-potential app opportunities before the market catches on.
                 </p>
               </div>
 
@@ -56,19 +56,19 @@ const FeatureSection = () => {
               <div className="space-y-6 max-w-md order-3">
                 <div className="flex items-center gap-6">
                   <div className="w-6 h-6 flex-shrink-0">
-                    <Bot className="w-6 h-6 text-hero-foreground" />
+                    <TrendingUp className="w-6 h-6 text-hero-foreground" />
                   </div>
                   <span className="text-hero-muted text-base lg:text-lg font-normal leading-relaxed">
-                    Internal Task Bots
+                    Cultural Trend Analysis
                   </span>
                 </div>
 
                 <div className="flex items-center gap-6">
                   <div className="w-6 h-6 flex-shrink-0">
-                    <Settings className="w-6 h-6 text-hero-foreground" />
+                    <Rocket className="w-6 h-6 text-hero-foreground" />
                   </div>
                   <span className="text-hero-muted text-base lg:text-lg font-normal leading-relaxed">
-                    100+ Automations
+                    Rapid Prototyping
                   </span>
                 </div>
               </div>
