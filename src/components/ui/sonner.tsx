@@ -7,16 +7,19 @@ const Toaster = ({ ...props }: ToasterProps) => {
     <Sonner
       theme="dark"
       className="toaster group"
-      toastOptions={{
-        classNames: {
-          toast:
-            "!bg-[#0a0a0a] !text-white !border !border-white/15 !shadow-lg",
-          title: "!text-white",
-          description: "!text-white/70",
-          actionButton: "!bg-white !text-black",
-          cancelButton: "!bg-white/10 !text-white",
-        },
-      }}
+      style={
+        {
+          "--normal-bg": "#0a0a0a",
+          "--normal-text": "#ffffff",
+          "--normal-border": "rgba(255,255,255,0.15)",
+          "--success-bg": "#0a0a0a",
+          "--success-text": "#ffffff",
+          "--success-border": "rgba(255,255,255,0.15)",
+          "--error-bg": "#1a0a0a",
+          "--error-text": "#ffffff",
+          "--error-border": "rgba(255,80,80,0.3)",
+        } as React.CSSProperties
+      }
       {...props}
     />
   )
