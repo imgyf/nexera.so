@@ -71,6 +71,7 @@ const AI_TOOLS = [
   "VEO 3",
   "ChatGPT for video scripting",
   "Midjourney/Stable Diffusion",
+  "Gemini Nanobanana",
   "None — I don't use AI tools yet",
 ];
 
