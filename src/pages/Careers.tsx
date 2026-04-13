@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/ui/footer-section";
 import { Button } from "@/components/ui/button";
@@ -42,7 +44,10 @@ import {
 
 const applicationSchema = z.object({
   fullName: z.string().min(1, "Full name is required"),
-  whatsapp: z.string().min(1, "WhatsApp number is required"),
+  whatsapp: z
+    .string()
+    .min(1, "WhatsApp number is required")
+    .refine((v) => isValidPhoneNumber(v), "Please enter a valid phone number"),
   email: z.string().email("Please enter a valid email"),
   location: z.string().min(1, "Current location is required"),
   experience: z.string().min(1, "Please select your experience level"),
@@ -330,6 +335,7 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
     register,
     handleSubmit,
     setValue,
+    watch,
     reset,
     formState: { errors },
   } = useForm<ApplicationFormData>({
@@ -440,10 +446,15 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
             error={errors.whatsapp?.message}
             required
           >
-            <Input
-              {...register("whatsapp")}
-              placeholder="+91 9876543210"
-              className="bg-hero-secondary-bg/5 border-hero-secondary-border text-hero-foreground placeholder:text-hero-muted/50"
+            <PhoneInput
+              international
+              defaultCountry="IN"
+              value={watch("whatsapp")}
+              onChange={(val) =>
+                setValue("whatsapp", val ?? "", { shouldValidate: true })
+              }
+              className="nexera-phone-input"
+              placeholder="9876543210"
             />
           </FormField>
 
