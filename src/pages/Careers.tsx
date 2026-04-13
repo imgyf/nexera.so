@@ -34,7 +34,6 @@ import {
   Video,
   Sparkles,
   Users,
-  X,
 } from "lucide-react";
 
 // ---------------------------------------------------------------------------
@@ -46,26 +45,26 @@ const applicationSchema = z.object({
   whatsapp: z.string().min(1, "WhatsApp number is required"),
   email: z.string().email("Please enter a valid email"),
   location: z.string().min(1, "Current location is required"),
-  officeAttendance: z.string().min(1, "Please select an option"),
   experience: z.string().min(1, "Please select your experience level"),
   aiTools: z.array(z.string()).min(1, "Please select at least one AI tool"),
   editingSoftware: z
     .array(z.string())
     .min(1, "Please select at least one software"),
-  ugcExperience: z.string().min(1, "Please select an option"),
-  portfolioLink: z.string().optional(),
+  shortFormExperience: z.string().min(1, "Please select an option"),
+  portfolioLink: z
+    .string()
+    .min(1, "Portfolio link is required")
+    .url("Please enter a valid URL"),
   joinTimeline: z.string().min(1, "Please select a timeline"),
   expectedSalary: z.string().min(1, "Please enter your expected salary"),
   motivation: z.string().min(10, "Please write at least 10 characters"),
-  acceptance: z
-    .boolean()
-    .refine((val) => val === true, "You must accept this condition"),
 });
 
 type ApplicationFormData = z.infer<typeof applicationSchema>;
 
 const AI_TOOLS = [
   "Kling AI",
+  "Seeddance 2.0",
   "Heygen",
   "Runway ML",
   "Viggle",
@@ -109,20 +108,21 @@ const Careers = () => {
               Careers
             </span>
             <h1 className="text-hero-foreground text-4xl lg:text-5xl xl:text-6xl font-normal leading-tight mt-4">
-              Video Editor (AI Ads) — Thane Office
+              Short-Form Video Editor
             </h1>
             <p className="text-hero-muted text-lg font-normal leading-relaxed mt-6 max-w-3xl">
-              We're hiring AI-native video editors who can create 25+
-              e-commerce ads on a daily basis using cutting-edge AI tools.
+              Create engaging, fast-paced vertical content (Instagram Reels,
+              TikToks, YouTube Shorts) for our AI, business, and tech brand —
+              with an editing style built to maximize viewer retention.
             </p>
 
             {/* Quick info pills */}
             <div className="flex flex-wrap gap-3 mt-8">
               {[
-                { icon: MapPin, text: "Thane, Mumbai" },
+                { icon: MapPin, text: "Virtual / Remote" },
                 { icon: Calendar, text: "6 days/week (Sun off)" },
                 { icon: Clock, text: "10am — 7pm" },
-                { icon: IndianRupee, text: "₹25,000 — ₹30,000/mo" },
+                { icon: IndianRupee, text: "₹30,000 — ₹40,000/mo" },
               ].map((pill) => (
                 <div
                   key={pill.text}
@@ -136,13 +136,13 @@ const Careers = () => {
               ))}
             </div>
 
-            {/* Warning box */}
+            {/* Note box */}
             <div className="mt-8 p-5 rounded-2xl border border-hero-secondary-border bg-hero-secondary-bg/5">
               <p className="text-hero-foreground text-sm font-normal leading-relaxed">
-                This is an <strong>ON-SITE ROLE</strong> in Thane, Mumbai. 6
-                days per week (Sunday off). No remote work. No hybrid options.
-                No exceptions. If you cannot come to Thane office daily, please
-                do not apply.
+                <strong>Heads up:</strong> Basic auto-generated CapCut templates
+                will not be sufficient for this role. We're looking for editors
+                who can craft custom, dynamic edits using Premiere Pro and After
+                Effects (or DaVinci Resolve).
               </p>
             </div>
 
@@ -158,65 +158,97 @@ const Careers = () => {
 
           {/* Job Description */}
           <div className="space-y-14">
-            {/* Responsibilities */}
             <DescriptionSection
               icon={Video}
               title="What You'll Do"
               items={[
-                "Produce 25+ UGC-style e-commerce video ads daily using AI-powered workflows",
-                "Leverage tools like Kling AI, Heygen, Runway ML, and Viggle to generate video content at scale",
-                "Generate multiple video iterations per product using Premiere Pro",
-                "Develop scripts and concepts with ChatGPT/Claude assistance",
-                "Collaborate with media buyers and other editors to optimize ad performance",
+                "Create highly engaging, fast-paced vertical content for Instagram Reels, TikTok, and YouTube Shorts",
+                "Build custom, dynamic, word-by-word animated subtitles with engaging fonts, keyword color highlights, and relevant emojis",
+                "Add pop-up graphics, object tracking, and smooth custom transitions to keep viewers anchored to the screen",
+                "Integrate AI-generated B-roll, screen recordings, images, and other assets to visually back up the speaker's point",
+                "Apply high-quality sound effects (whooshes, pops, risers, typing sounds) to elevate production value",
               ]}
             />
 
-            {/* Requirements */}
             <DescriptionSection
               icon={Briefcase}
               title="What We're Looking For"
               items={[
-                "Hands-on experience with AI video generation tools (Kling AI, Heygen, Runway, etc.)",
-                "Proficiency in professional editing software — Premiere Pro, After Effects, or DaVinci Resolve",
-                "Prior experience creating UGC-style advertisements",
-                "Ability to work at a fast pace and produce high-volume output without sacrificing quality",
-                "Available to join within 15 days",
+                "Proficiency in Adobe Premiere Pro and After Effects (or DaVinci Resolve) — not just CapCut templates",
+                "Deep understanding of modern social media algorithms, pacing, and what keeps a viewer engaged in the first 3 seconds",
+                "Comfort working in a fast-moving, feedback-driven environment",
+                "Ability to manage multiple projects and consistently meet deadlines",
+                "Excellent attention to detail in audio syncing, color grading, and sound design",
+                "Fluent in English with strong context awareness for highlighting the right caption keywords",
               ]}
             />
 
-            {/* What we offer */}
             <DescriptionSection
               icon={Sparkles}
               title="What You'll Get"
               items={[
-                "₹25,000 — ₹30,000 monthly salary, contingent on speed and quality metrics",
-                "Performance bonuses for high-performing ad creation",
-                "Accelerated learning in cutting-edge AI video production tools",
-                "Collaborative team environment with media buyers and editors",
-                "Opportunity to be at the forefront of AI-native content creation",
+                "₹30,000 — ₹40,000 monthly, based on speed and quality",
+                "Work closely with experienced editors and content leaders — regular feedback, guidance, and mentorship",
+                "Sharpen your storytelling instincts, technical ability, and creative judgment on real, shipping content",
+                "Increased responsibility and influence as the content operation scales — high performers move up fast",
               ]}
             />
 
-            {/* Team */}
             <DescriptionSection
               icon={Users}
               title="The Environment"
               items={[
-                "Fast-paced, high-volume production studio",
-                "Work alongside a team that ships daily — not weekly",
-                "Direct exposure to what works in paid social advertising",
-                "Thane office, conveniently located near Thane station",
+                "Fully virtual — work from wherever you are",
+                "6 days per week (Sunday off), 10am — 7pm",
+                "Fast feedback loops with content leaders who ship daily",
+                "Direct exposure to what actually performs on short-form platforms",
               ]}
             />
+
+            {/* Video Examples */}
+            <div>
+              <div className="flex items-center gap-3 mb-5">
+                <Video className="w-5 h-5 text-hero-foreground" />
+                <h2 className="text-hero-foreground text-2xl font-normal">
+                  Editing Style Reference
+                </h2>
+              </div>
+              <p className="text-hero-muted text-base leading-relaxed mb-5">
+                These are the kind of edits we're looking for — pacing, hooks,
+                motion, and caption style:
+              </p>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  "https://www.instagram.com/p/DTrrJfXgI3d/",
+                  "https://www.instagram.com/p/DWQR6QjDQj4/",
+                  "https://www.instagram.com/p/DWtv8amiOj4/",
+                  "https://www.instagram.com/p/DWWEajRAb0f/",
+                  "https://www.instagram.com/p/DLP_LZTstlQ/",
+                  "https://www.instagram.com/reel/DW1xMPZjpkt/",
+                ].map((url, i) => (
+                  <li key={url}>
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-3 bg-hero-badge-bg border border-hero-badge-border rounded-2xl text-hero-badge-text text-sm hover:border-hero-foreground/40 transition-colors"
+                    >
+                      <Video className="w-4 h-4 shrink-0" />
+                      <span className="truncate">Example {i + 1}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Bottom Apply CTA */}
           <div className="mt-20 pt-12 border-t border-hero-secondary-border">
             <h2 className="text-hero-foreground text-3xl lg:text-4xl font-normal leading-tight">
-              Ready to create at scale?
+              Ready to create scroll-stopping content?
             </h2>
             <p className="text-hero-muted text-base font-normal leading-relaxed mt-4 max-w-xl">
-              If you thrive in fast-paced environments and love pushing the
+              If you live and breathe short-form video and love pushing the
               boundaries of AI-powered content, we want to hear from you.
             </p>
             <Button
@@ -295,7 +327,6 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
     register,
     handleSubmit,
     setValue,
-    watch,
     reset,
     formState: { errors },
   } = useForm<ApplicationFormData>({
@@ -303,7 +334,6 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
     defaultValues: {
       aiTools: [],
       editingSoftware: [],
-      acceptance: false,
     },
   });
 
@@ -321,11 +351,9 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
   };
 
   const onSubmit = async (data: ApplicationFormData) => {
-    // Honeypot check — hidden field should be empty
     const honeypot = (document.getElementById("website_url") as HTMLInputElement)?.value;
     if (honeypot) return;
 
-    // Time check — reject if submitted faster than a human could
     if (Date.now() - openedAt < MIN_SUBMIT_TIME_MS) {
       toast({
         title: "Please slow down",
@@ -342,12 +370,11 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
         "WhatsApp Number": data.whatsapp,
         "Email": data.email,
         "Current Location": data.location,
-        "Office Attendance": data.officeAttendance,
         "Years of Experience": data.experience,
         "AI Tools": data.aiTools,
         "Editing Software": data.editingSoftware,
-        "UGC Experience": data.ugcExperience,
-        "Portfolio Link": data.portfolioLink || "",
+        "Short Form Experience": data.shortFormExperience,
+        "Portfolio Link": data.portfolioLink,
         "Join Timeline": data.joinTimeline,
         "Expected Salary": Number(data.expectedSalary),
         "Motivation": data.motivation,
@@ -375,27 +402,24 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-[#0a0a0a] border-hero-secondary-border text-hero-foreground p-0">
-        {/* Sticky header */}
         <div className="sticky top-0 z-10 bg-[#0a0a0a] border-b border-hero-secondary-border px-6 py-5">
           <DialogHeader>
             <DialogTitle className="text-hero-foreground text-xl font-normal">
-              Apply — Video Editor (AI Ads)
+              Apply — Short-Form Video Editor
             </DialogTitle>
           </DialogHeader>
         </div>
 
-        {/* Scrollable form body */}
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="space-y-7 px-6 pb-8 pt-4"
         >
-          {/* Honeypot — invisible to humans, bots will fill it */}
+          {/* Honeypot */}
           <div aria-hidden="true" className="absolute opacity-0 h-0 overflow-hidden pointer-events-none" tabIndex={-1}>
             <label htmlFor="website_url">Website</label>
             <input type="text" id="website_url" name="website_url" autoComplete="off" tabIndex={-1} />
           </div>
 
-          {/* Full Name */}
           <FormField
             label="Full Name"
             error={errors.fullName?.message}
@@ -408,7 +432,6 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
             />
           </FormField>
 
-          {/* WhatsApp */}
           <FormField
             label="WhatsApp Number"
             error={errors.whatsapp?.message}
@@ -421,7 +444,6 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
             />
           </FormField>
 
-          {/* Email */}
           <FormField label="Email" error={errors.email?.message} required>
             <Input
               {...register("email")}
@@ -431,7 +453,6 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
             />
           </FormField>
 
-          {/* Location */}
           <FormField
             label="Current Location"
             error={errors.location?.message}
@@ -439,37 +460,11 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
           >
             <Input
               {...register("location")}
-              placeholder="City, State"
+              placeholder="City, Country"
               className="bg-hero-secondary-bg/5 border-hero-secondary-border text-hero-foreground placeholder:text-hero-muted/50"
             />
           </FormField>
 
-          {/* Office Attendance */}
-          <FormField
-            label="Can you come to Thane office 6 days/week?"
-            error={errors.officeAttendance?.message}
-            required
-          >
-            <RadioGroup
-              onValueChange={(val) =>
-                setValue("officeAttendance", val, { shouldValidate: true })
-              }
-              className="space-y-3"
-            >
-              <RadioOption
-                value="yes"
-                id="attendance-yes"
-                label="Yes, I can come daily to Thane office"
-              />
-              <RadioOption
-                value="no"
-                id="attendance-no"
-                label="No, I need remote/hybrid"
-              />
-            </RadioGroup>
-          </FormField>
-
-          {/* Experience */}
           <FormField
             label="Years of video editing experience"
             error={errors.experience?.message}
@@ -492,7 +487,6 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
             </Select>
           </FormField>
 
-          {/* AI Tools */}
           <FormField
             label="Which AI video tools do you currently use? (Select all)"
             error={errors.aiTools?.message}
@@ -513,7 +507,6 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
             </div>
           </FormField>
 
-          {/* Editing Software */}
           <FormField
             label="Which editing software do you use daily? (Select all)"
             error={errors.editingSoftware?.message}
@@ -539,39 +532,41 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
             </div>
           </FormField>
 
-          {/* UGC Experience */}
           <FormField
-            label="Have you created UGC-style ads before?"
-            error={errors.ugcExperience?.message}
+            label="Have you created short-form content before?"
+            error={errors.shortFormExperience?.message}
             required
           >
             <RadioGroup
               onValueChange={(val) =>
-                setValue("ugcExperience", val, { shouldValidate: true })
+                setValue("shortFormExperience", val, { shouldValidate: true })
               }
               className="space-y-3"
             >
               {[
                 { value: "regularly", label: "Yes, I create them regularly" },
-                { value: "few-times", label: "Yes, but only a few times" },
+                { value: "few-times", label: "Yes, only a few times" },
                 { value: "can-learn", label: "No, but I can learn" },
                 {
                   value: "no-idea",
-                  label: "No, I don't know what UGC is",
+                  label: "No, I don't know what short-form content is",
                 },
               ].map((opt) => (
                 <RadioOption
                   key={opt.value}
                   value={opt.value}
-                  id={`ugc-${opt.value}`}
+                  id={`sf-${opt.value}`}
                   label={opt.label}
                 />
               ))}
             </RadioGroup>
           </FormField>
 
-          {/* Portfolio */}
-          <FormField label="Portfolio/Reel Link (Google Drive or YouTube — Optional)">
+          <FormField
+            label="Portfolio of videos you've edited (Google Drive, YouTube, or Instagram link)"
+            error={errors.portfolioLink?.message}
+            required
+          >
             <Input
               {...register("portfolioLink")}
               placeholder="https://..."
@@ -579,9 +574,8 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
             />
           </FormField>
 
-          {/* Join Timeline */}
           <FormField
-            label="Can you join within 15 days?"
+            label="How soon can you join?"
             error={errors.joinTimeline?.message}
             required
           >
@@ -592,9 +586,9 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
               className="space-y-3"
             >
               {[
-                { value: "immediately", label: "Yes, available immediately" },
-                { value: "7-days", label: "Yes, within 7 days" },
-                { value: "30-plus", label: "No, need 30+ days" },
+                { value: "immediately", label: "Available immediately" },
+                { value: "7-days", label: "Within 7 days" },
+                { value: "30-days", label: "Within 30 days" },
               ].map((opt) => (
                 <RadioOption
                   key={opt.value}
@@ -606,7 +600,6 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
             </RadioGroup>
           </FormField>
 
-          {/* Expected Salary */}
           <FormField
             label="Expected Monthly Salary (in ₹)"
             error={errors.expectedSalary?.message}
@@ -615,49 +608,24 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
             <Input
               {...register("expectedSalary")}
               type="number"
-              placeholder="30000"
+              placeholder="35000"
               className="bg-hero-secondary-bg/5 border-hero-secondary-border text-hero-foreground placeholder:text-hero-muted/50"
             />
           </FormField>
 
-          {/* Motivation */}
           <FormField
-            label="Why do you want to work in a fast-paced, high-volume environment?"
+            label="What excites you about short-form editing, and how do you keep viewers engaged?"
             error={errors.motivation?.message}
             required
           >
             <Textarea
               {...register("motivation")}
-              placeholder="Tell us what excites you about this role..."
+              placeholder="Tell us about your approach to hooks, pacing, and retention..."
               rows={4}
               className="bg-hero-secondary-bg/5 border-hero-secondary-border text-hero-foreground placeholder:text-hero-muted/50 resize-none"
             />
           </FormField>
 
-          {/* Acceptance */}
-          <FormField error={errors.acceptance?.message}>
-            <div className="flex items-start gap-3">
-              <Checkbox
-                id="acceptance"
-                checked={watch("acceptance")}
-                onCheckedChange={(checked) =>
-                  setValue("acceptance", checked === true, {
-                    shouldValidate: true,
-                  })
-                }
-                className="mt-1"
-              />
-              <Label
-                htmlFor="acceptance"
-                className="text-hero-muted text-base font-normal cursor-pointer leading-relaxed"
-              >
-                I understand and accept on-site work at Thane office, 6
-                days/week
-              </Label>
-            </div>
-          </FormField>
-
-          {/* Submit */}
           <Button
             type="submit"
             variant="hero"
