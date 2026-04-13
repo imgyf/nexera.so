@@ -217,28 +217,30 @@ const Careers = () => {
                 These are the kind of edits we're looking for — pacing, hooks,
                 motion, and caption style:
               </p>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {[
-                  "https://www.instagram.com/p/DTrrJfXgI3d/",
-                  "https://www.instagram.com/p/DWQR6QjDQj4/",
-                  "https://www.instagram.com/p/DWtv8amiOj4/",
-                  "https://www.instagram.com/p/DWWEajRAb0f/",
-                  "https://www.instagram.com/p/DLP_LZTstlQ/",
-                  "https://www.instagram.com/reel/DW1xMPZjpkt/",
-                ].map((url, i) => (
-                  <li key={url}>
-                    <a
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-3 bg-hero-badge-bg border border-hero-badge-border rounded-2xl text-hero-badge-text text-sm hover:border-hero-foreground/40 transition-colors"
-                    >
-                      <Video className="w-4 h-4 shrink-0" />
-                      <span className="truncate">Example {i + 1}</span>
-                    </a>
-                  </li>
+                  { type: "p", id: "DTrrJfXgI3d" },
+                  { type: "p", id: "DWQR6QjDQj4" },
+                  { type: "p", id: "DWtv8amiOj4" },
+                  { type: "p", id: "DWWEajRAb0f" },
+                  { type: "p", id: "DLP_LZTstlQ" },
+                  { type: "reel", id: "DW1xMPZjpkt" },
+                ].map(({ type, id }) => (
+                  <div
+                    key={id}
+                    className="overflow-hidden rounded-2xl border border-hero-badge-border bg-hero-badge-bg"
+                  >
+                    <iframe
+                      src={`https://www.instagram.com/${type}/${id}/embed`}
+                      loading="lazy"
+                      title={`Instagram ${type} ${id}`}
+                      allow="encrypted-media"
+                      scrolling="no"
+                      className="w-full h-[640px] border-0"
+                    />
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           </div>
 
