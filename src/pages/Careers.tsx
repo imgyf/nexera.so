@@ -388,6 +388,7 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
         "Expected Salary": Number(data.expectedSalary),
         "Motivation": data.motivation,
       });
+      window.fbq?.("track", "Lead");
       toast({
         title: "Application submitted!",
         description:
