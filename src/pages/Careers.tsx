@@ -387,7 +387,7 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
         "AI Tools": data.aiTools,
         "Editing Software": data.editingSoftware,
         "Short Form Experience": data.shortFormExperience,
-        "Done Example Videos": data.doneExampleVideos === "yes",
+        "Done Example Videos Before?": data.doneExampleVideos === "yes",
         "Portfolio Link": data.portfolioLink,
         "Join Timeline": data.joinTimeline,
         "Expected Salary": Number(data.expectedSalary),
