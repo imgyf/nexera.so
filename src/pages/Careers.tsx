@@ -56,6 +56,9 @@ const applicationSchema = z.object({
     .array(z.string())
     .min(1, "Please select at least one software"),
   shortFormExperience: z.string().min(1, "Please select an option"),
+  doneExampleVideos: z.enum(["yes", "no"], {
+    required_error: "Please select an option",
+  }),
   portfolioLink: z
     .string()
     .min(1, "Portfolio link is required")
@@ -384,6 +387,7 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
         "AI Tools": data.aiTools,
         "Editing Software": data.editingSoftware,
         "Short Form Experience": data.shortFormExperience,
+        "Done Example Videos": data.doneExampleVideos === "yes",
         "Portfolio Link": data.portfolioLink,
         "Join Timeline": data.joinTimeline,
         "Expected Salary": Number(data.expectedSalary),
@@ -573,6 +577,33 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
                   key={opt.value}
                   value={opt.value}
                   id={`sf-${opt.value}`}
+                  label={opt.label}
+                />
+              ))}
+            </RadioGroup>
+          </FormField>
+
+          <FormField
+            label="Have you done the type of videos we showed as examples before?"
+            error={errors.doneExampleVideos?.message}
+            required
+          >
+            <RadioGroup
+              onValueChange={(val) =>
+                setValue("doneExampleVideos", val as "yes" | "no", {
+                  shouldValidate: true,
+                })
+              }
+              className="space-y-3"
+            >
+              {[
+                { value: "yes", label: "Yes" },
+                { value: "no", label: "No" },
+              ].map((opt) => (
+                <RadioOption
+                  key={opt.value}
+                  value={opt.value}
+                  id={`example-${opt.value}`}
                   label={opt.label}
                 />
               ))}
