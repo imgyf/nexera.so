@@ -62,6 +62,7 @@ const applicationSchema = z.object({
     .url("Please enter a valid URL"),
   joinTimeline: z.string().min(1, "Please select a timeline"),
   expectedSalary: z.string().min(1, "Please enter your expected salary"),
+  englishRating: z.string().min(1, "Please rate your English"),
   motivation: z.string().min(10, "Please write at least 10 characters"),
 });
 
@@ -386,6 +387,7 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
         "Portfolio Link": data.portfolioLink,
         "Join Timeline": data.joinTimeline,
         "Expected Salary": Number(data.expectedSalary),
+        "English Rating": Number(data.englishRating),
         "Motivation": data.motivation,
       });
       window.fbq?.("track", "Lead");
@@ -626,6 +628,29 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
               placeholder="35000"
               className="bg-hero-secondary-bg/5 border-hero-secondary-border text-hero-foreground placeholder:text-hero-muted/50"
             />
+          </FormField>
+
+          <FormField
+            label="How would you rate yourself for English communication out of 10?"
+            error={errors.englishRating?.message}
+            required
+          >
+            <Select
+              onValueChange={(val) =>
+                setValue("englishRating", val, { shouldValidate: true })
+              }
+            >
+              <SelectTrigger className="bg-hero-secondary-bg/5 border-hero-secondary-border text-hero-foreground">
+                <SelectValue placeholder="Select a rating from 1 to 10" />
+              </SelectTrigger>
+              <SelectContent>
+                {Array.from({ length: 10 }, (_, i) => i + 1).map((n) => (
+                  <SelectItem key={n} value={String(n)}>
+                    {n}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </FormField>
 
           <FormField
