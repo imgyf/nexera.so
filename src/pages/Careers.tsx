@@ -42,6 +42,14 @@ import {
 // Schema
 // ---------------------------------------------------------------------------
 
+const MAX_RESUME_BYTES = 5 * 1024 * 1024;
+const ALLOWED_RESUME_TYPES = [
+  "application/pdf",
+  "application/msword",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+];
+const ALLOWED_RESUME_EXTENSIONS = [".pdf", ".doc", ".docx"];
+
 const applicationSchema = z.object({
   fullName: z.string().min(1, "Full name is required"),
   whatsapp: z
@@ -63,6 +71,19 @@ const applicationSchema = z.object({
     .string()
     .min(1, "Portfolio link is required")
     .url("Please enter a valid URL"),
+  resume: z
+    .instanceof(File, { message: "Please upload your resume" })
+    .refine(
+      (file) => file.size <= MAX_RESUME_BYTES,
+      "Resume must be 5MB or smaller"
+    )
+    .refine((file) => {
+      const name = file.name.toLowerCase();
+      return (
+        ALLOWED_RESUME_TYPES.includes(file.type) ||
+        ALLOWED_RESUME_EXTENSIONS.some((ext) => name.endsWith(ext))
+      );
+    }, "Resume must be a PDF, DOC, or DOCX file"),
   joinTimeline: z.string().min(1, "Please select a timeline"),
   expectedSalary: z.string().min(1, "Please enter your expected salary"),
   englishRating: z.string().min(1, "Please rate your English"),
@@ -378,8 +399,9 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
 
     setIsSubmitting(true);
     try {
-      await submitToLarkBase({
-        "Full Name": data.fullName,
+      await submitToLarkBase(
+        {
+          "Full Name": data.fullName,
         "WhatsApp Number": data.whatsapp,
         "Email": data.email,
         "Current Location": data.location,
@@ -393,7 +415,9 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
         "Expected Salary": Number(data.expectedSalary),
         "English Rating": Number(data.englishRating),
         "Motivation": data.motivation,
-      });
+        },
+        data.resume
+      );
       window.fbq?.("track", "Lead");
       toast({
         title: "Application submitted!",
@@ -619,6 +643,22 @@ const ApplicationModal = ({ open, onOpenChange }: ApplicationModalProps) => {
               {...register("portfolioLink")}
               placeholder="https://..."
               className="bg-hero-secondary-bg/5 border-hero-secondary-border text-hero-foreground placeholder:text-hero-muted/50"
+            />
+          </FormField>
+
+          <FormField
+            label="Resume / CV (PDF, DOC, or DOCX — max 5MB)"
+            error={errors.resume?.message as string | undefined}
+            required
+          >
+            <Input
+              type="file"
+              accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+              onChange={(e) => {
+                const file = e.target.files?.[0];
+                setValue("resume", file as File, { shouldValidate: true });
+              }}
+              className="bg-hero-secondary-bg/5 border-hero-secondary-border text-hero-foreground file:text-hero-foreground file:bg-transparent file:border-0 file:mr-3 cursor-pointer"
             />
           </FormField>
 

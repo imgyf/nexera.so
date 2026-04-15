@@ -1,6 +1,20 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 const LARK_BASE = "https://open.larksuite.com";
+const MAX_RESUME_BYTES = 5 * 1024 * 1024;
+
+export const config = {
+  api: {
+    bodyParser: { sizeLimit: "8mb" },
+  },
+};
+
+interface ResumePayload {
+  name: string;
+  type: string;
+  size: number;
+  content: string;
+}
 
 function transformFields(body: Record<string, unknown>): Record<string, unknown> {
   const out: Record<string, unknown> = { ...body };
@@ -9,6 +23,43 @@ function transformFields(body: Record<string, unknown>): Record<string, unknown>
     out["Portfolio Link"] = { link, text: link };
   }
   return out;
+}
+
+async function uploadResumeToLark(
+  token: string,
+  appToken: string,
+  resume: ResumePayload
+): Promise<string> {
+  const bytes = Buffer.from(resume.content, "base64");
+  if (bytes.byteLength > MAX_RESUME_BYTES) {
+    throw new Error("Resume file too large");
+  }
+
+  const form = new FormData();
+  form.append("file_name", resume.name);
+  form.append("parent_type", "bitable_file");
+  form.append("parent_node", appToken);
+  form.append("size", String(bytes.byteLength));
+  form.append(
+    "file",
+    new Blob([new Uint8Array(bytes)], { type: resume.type }),
+    resume.name
+  );
+
+  const res = await fetch(`${LARK_BASE}/open-apis/drive/v1/medias/upload_all`, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${token}` },
+    body: form,
+  });
+  const data = (await res.json()) as {
+    code: number;
+    msg: string;
+    data?: { file_token?: string };
+  };
+  if (data.code !== 0 || !data.data?.file_token) {
+    throw new Error(`Resume upload failed: ${data.msg}`);
+  }
+  return data.data.file_token;
 }
 
 async function getTenantToken(appId: string, appSecret: string): Promise<string> {
@@ -41,6 +92,23 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     const token = await getTenantToken(appId, appSecret);
 
+    const body = req.body as
+      | { fields?: Record<string, unknown>; resume?: ResumePayload }
+      | Record<string, unknown>;
+    const hasEnvelope =
+      body && typeof body === "object" && "fields" in body && (body as { fields?: unknown }).fields;
+    const rawFields = (hasEnvelope
+      ? (body as { fields: Record<string, unknown> }).fields
+      : (body as Record<string, unknown>)) ?? {};
+    const resume = hasEnvelope ? (body as { resume?: ResumePayload }).resume : undefined;
+
+    const fields = transformFields(rawFields);
+
+    if (resume?.content) {
+      const fileToken = await uploadResumeToLark(token, appToken, resume);
+      fields["Resume"] = [{ file_token: fileToken }];
+    }
+
     const url = `${LARK_BASE}/open-apis/bitable/v1/apps/${appToken}/tables/${tableId}/records`;
     const response = await fetch(url, {
       method: "POST",
@@ -48,7 +116,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({ fields: transformFields(req.body) }),
+      body: JSON.stringify({ fields }),
     });
 
     const data = (await response.json()) as { code: number; msg: string };
